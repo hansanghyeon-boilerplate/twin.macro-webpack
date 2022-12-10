@@ -8,9 +8,11 @@ dotenv.config();
 
 module.exports = function webpackConfig(env, args) {
   return {
-    entry: path.join(__dirname, 'src/index.tsx'),
+    entry: {
+      main: path.join(__dirname, 'src/index.tsx')
+    },
     output: {
-      filename: 'main.js',
+      filename: '[name].js',
       path: path.join(__dirname, 'public'),
     },
     resolve: {
